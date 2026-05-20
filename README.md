@@ -162,22 +162,6 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md) for full ADRs. Summary:
 - **Regional resources** — data residency enforced at the resource level, not just policy
 - **BigQuery audit export** — 365-day retention satisfies FedRAMP; SQL-queryable without extra tooling
 
----
-
-## Interview Talking Points
-
-> "I built a GCP Secure Foundation Terraform project that provisions a complete
-> Zero Trust network baseline — private VPC with no public IPs, least-privilege
-> IAM with no service account keys, customer-managed KMS encryption with 90-day
-> rotation, and full audit logging exported to BigQuery for one-year retention.
-> Each security domain is a separate module with clean interfaces. Remote state
-> in GCS with locking. Environment separation through tfvars files.
->
-> The design decisions map directly to FedRAMP and DoD compliance requirements —
-> data residency through regional resources, key revocation through
-> customer-managed KMS, audit retention through BigQuery export."
-
----
 
 *Fred Garcia — Principal Solutions Architect*
 *Built with Terraform 1.7+ and Google Provider 5.x*
