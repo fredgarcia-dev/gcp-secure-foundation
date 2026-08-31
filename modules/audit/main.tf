@@ -42,6 +42,10 @@ resource "google_bigquery_dataset" "audit_logs" {
   }
 
   depends_on = [google_kms_crypto_key_iam_member.bq_encrypter_decrypter]
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # Export all project logs to BigQuery — no filter, capture everything

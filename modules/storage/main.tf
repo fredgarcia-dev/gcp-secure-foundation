@@ -31,6 +31,10 @@ resource "google_storage_bucket" "data" {
   }
 
   depends_on = [google_kms_crypto_key_iam_member.gcs_encrypter_decrypter]
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "google_storage_bucket_iam_binding" "storage_sa_viewer" {
